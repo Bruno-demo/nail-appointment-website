@@ -1,0 +1,91 @@
+.notfound-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 80px;
+  background:
+    radial-gradient(circle at top, rgba(255, 159, 203, 0.25), transparent 60%),
+    linear-gradient(135deg, #fff7fb 0%, #ffffff 60%);
+}
+
+.notfound-card {
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+  padding: 36px 28px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  box-shadow: 0 20px 40px rgba(17, 24, 39, 0.12);
+}
+
+.notfound-kicker {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #ff3f92;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.notfound-card h1 {
+  margin: 0 0 10px;
+  font-size: 32px;
+  color: #111827;
+  letter-spacing: -0.3px;
+}
+
+.notfound-card p {
+  margin: 0 0 22px;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.notfound-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notfound-btn.primary {
+  background: linear-gradient(135deg, #ff5fa2, #ff8bbd);
+  color: #ffffff;
+  box-shadow: 0 12px 20px rgba(255, 95, 162, 0.3);
+}
+
+.notfound-btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 26px rgba(255, 95, 162, 0.35);
+}
+
+.notfound-btn.ghost {
+  border-color: rgba(255, 95, 162, 0.35);
+  color: #ff3f92;
+  background: #ffffff;
+}
+
+@media (max-width: 540px) {
+  .notfound-card {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+
+  .notfound-card h1 {
+    font-size: 26px;
+  }
+}

@@ -1,0 +1,60 @@
+/* modal.css
+  - Modal overlay + panel
+*/
+
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.admin-modal {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 18px;
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.admin-modal-head {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-modal-head h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.admin-modal-body {
+  padding: 16px;
+}
+
+.admin-modal-foot {
+  padding: 14px 16px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+  color: var(--text);
+  cursor: pointer;
+}

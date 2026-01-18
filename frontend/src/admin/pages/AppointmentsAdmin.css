@@ -1,0 +1,48 @@
+.admin-shell .admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0 18px;
+  flex-wrap: wrap;
+}
+
+.admin-shell .tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-shell .tab {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--admin-border);
+  background: #fff;
+  color: var(--admin-text);
+  font-weight: 500;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.admin-shell .tab:hover {
+  border-color: rgba(15, 23, 42, 0.18);
+  transform: translateY(-1px);
+  box-shadow: var(--admin-shadow-soft);
+}
+
+.admin-shell .tab.active {
+  background: var(--admin-navy);
+  color: #fff;
+  border-color: var(--admin-navy);
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.25);
+}
+
+@media (max-width: 640px) {
+  .admin-shell .admin-toolbar {
+    align-items: flex-start;
+  }
+
+  .admin-shell .tab {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}

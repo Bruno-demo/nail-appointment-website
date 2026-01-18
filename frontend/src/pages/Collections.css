@@ -1,0 +1,88 @@
+/* What this does:
+   Banner styling + responsive embed grid */
+
+.collections-banner {
+    background:
+        linear-gradient(to right, rgba(255, 95, 162, 0.35), rgba(255, 175, 211, 0.6)),
+        url("../assets/collection.jfif");
+    color: white;
+    text-align: center;
+    padding: 56px 7%;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    isolation: isolate;
+}
+
+.collections-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(0, 0, 0, 0.22), transparent 60%);
+    z-index: -1;
+}
+
+.collections-banner h1 {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: -0.4px;
+    text-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.collections-banner p {
+    margin: 0;
+    opacity: 0.95;
+    max-width: 560px;
+}
+
+.ig-embed-grid {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 0 7% 60px;
+}
+
+.ig-embed-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+    .ig-embed-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .ig-embed-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .collections-banner {
+        min-height: 180px;
+        padding: 36px 18px;
+    }
+
+    .collections-banner h1 {
+        font-size: 26px;
+    }
+
+    .ig-embed-grid {
+        padding: 0 18px 40px;
+        gap: 12px;
+    }
+}

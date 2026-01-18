@@ -1,0 +1,78 @@
+.admin-shell .services-admin-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.admin-shell .services-admin-grid > * {
+  min-width: 0;
+}
+
+.admin-shell .admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-shell .admin-form label {
+  font-size: 12px;
+  color: var(--admin-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-shell .admin-form input {
+  padding: 10px 12px;
+  border: 1px solid var(--admin-border);
+  border-radius: 12px;
+  outline: none;
+  background: #f8fafc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.admin-shell .admin-form input:focus {
+  border-color: var(--admin-accent);
+  box-shadow: 0 0 0 3px rgba(255, 95, 162, 0.2);
+}
+
+.admin-shell .two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.admin-shell .two > div {
+  min-width: 0;
+}
+
+.admin-shell .actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.admin-shell .row-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+  .admin-shell .services-admin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-shell .two {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+

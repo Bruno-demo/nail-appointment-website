@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", 'Playfair', sans-serif;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body{
+  margin-top: 62.67px !important;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: radial-gradient(circle at 10% 20%, rgb(215, 248, 255) 0%, rgb(255, 228, 233) 40%, rgb(255, 255, 255) 80%);
+    background-attachment: fixed;
+}
+
+.app-loading {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  color: #555;
+}
+@media (max-width: 950px) {
+  .container {
+    background-attachment: scroll !important; 
+
+  }
+  body{
+  margin-top: 0 !important;
+}
+}
+
+@media (max-width: 420px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    overflow-x: hidden;
+  }
+}

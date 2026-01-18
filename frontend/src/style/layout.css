@@ -1,0 +1,33 @@
+/* layout.css
+  - Admin layout: sidebar + main content
+*/
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+
+.admin-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.admin-content {
+  padding: 22px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Mobile: sidebar becomes drawer */
+@media (max-width: 980px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-content {
+    padding: 16px;
+  }
+}

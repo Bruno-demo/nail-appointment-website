@@ -1,0 +1,64 @@
+/* forms.css
+  - Inputs + buttons (consistent)
+*/
+
+.form-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.form-row {
+  display: grid;
+  gap: 6px;
+}
+
+.form-row label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  padding: 11px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.20);
+  color: var(--text);
+  outline: none;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  border-color: rgba(255,95,162,.55);
+  box-shadow: 0 0 0 4px rgba(255,95,162,.12);
+}
+
+.btn {
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  cursor: pointer;
+  transition: .15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+}
+
+.btn-primary {
+  border-color: rgba(255,95,162,.35);
+  background: rgba(255,95,162,.14);
+}
+
+.btn-primary:hover {
+  background: rgba(255,95,162,.20);
+}
+
+.btn-ghost {
+  background: transparent;
+}

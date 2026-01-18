@@ -1,0 +1,70 @@
+.admin-shell .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.admin-shell .admin-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.admin-shell .admin-two-col > * {
+  min-width: 0;
+}
+
+.admin-shell .admin-two-col .admin-panel {
+  height: 100%;
+}
+
+@media (max-width: 1000px) {
+  .admin-shell .admin-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-shell .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+.admin-shell .dashboard-services .simple-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.admin-shell .dashboard-services .simple-list li {
+  border: 1px solid var(--admin-border);
+  border-radius: 14px;
+  padding: 14px;
+  background: var(--admin-surface);
+  box-shadow: var(--admin-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 110px;
+}
+
+.admin-shell .dashboard-services .simple-list li > div {
+  min-width: 0;
+}
+
+.admin-shell .dashboard-services .simple-list li strong {
+  font-size: 14px;
+}
+
+.admin-shell .dashboard-services .simple-list li > .muted {
+  color: #9d174d;
+  background: #fdf2f8;
+  border: 1px solid #fbcfe8;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+}

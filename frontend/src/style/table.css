@@ -1,0 +1,92 @@
+/* table.css
+  - Responsive tables with horizontal scroll on small screens
+*/
+
+.table-wrap {
+  margin-top: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  background: rgba(255,255,255,.03);
+  overflow: hidden;
+}
+
+.table-toolbar {
+  padding: 12px 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.table-toolbar h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.table-toolbar .right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.table-search {
+  width: 260px;
+  max-width: 50vw;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.20);
+  color: var(--text);
+  outline: none;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 820px; /* forces scroll on mobile */
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  font-size: 13px;
+}
+
+.admin-table th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 800;
+  background: rgba(255,255,255,.03);
+}
+
+.row-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-mini {
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+  cursor: pointer;
+}
+.btn-mini:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.btn-danger {
+  border-color: rgba(255, 80, 80, .35);
+  background: rgba(255, 80, 80, .12);
+}
+.btn-danger:hover {
+  background: rgba(255, 80, 80, .18);
+}

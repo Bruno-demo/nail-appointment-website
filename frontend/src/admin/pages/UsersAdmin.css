@@ -1,0 +1,59 @@
+.admin-shell .role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid var(--admin-border);
+  background: #fff;
+  color: var(--admin-text);
+  font-weight: 600;
+}
+
+.admin-shell .role-badge.admin {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #065f46;
+}
+
+.admin-shell .role-badge.user {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+}
+
+.admin-shell .action-btn {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--admin-border);
+  background: var(--admin-surface);
+  cursor: pointer;
+  font-size: 13px;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.admin-shell .action-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+  box-shadow: var(--admin-shadow-soft);
+}
+
+.admin-shell .action-btn.make-admin {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #fff;
+}
+
+.admin-shell .action-btn.remove-admin {
+  background: #fff1f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+@media (max-width: 720px) {
+  .admin-shell .action-btn {
+    width: 100%;
+  }
+}

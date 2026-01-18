@@ -1,0 +1,279 @@
+.about-page{
+  --pink:#ff5fa2;
+  --pink2:#ff9cc8;
+  --text:#111;
+  --muted:#666;
+  --border:#eee;
+}
+
+.about-page{
+  background:#fff;
+}
+
+/* Hero */
+.about-hero{
+  min-height: 240px;
+  padding: 56px 7%;
+  background: linear-gradient(to right, rgba(225, 119, 164, 0.85), rgba(255, 156, 200, 0.55)),
+  url("../assets/about-us-page.png");
+  color:#fff;
+  display:flex;
+  align-items:center;
+  position:relative;
+  isolation:isolate;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at top, rgba(0,0,0,0.25), transparent 60%);
+  z-index:-1;
+}
+
+.about-hero-inner{
+  max-width:1100px;
+  margin:0 auto;
+  width:100%;
+}
+
+.about-hero h1{
+  margin:0 0 10px;
+  font-size:42px;
+  letter-spacing:-0.4px;
+  line-height:1.05;
+  text-shadow:0 10px 22px rgba(0,0,0,0.25);
+}
+
+.about-hero p{
+  margin:0;
+  opacity:.95;
+  max-width:720px;
+}
+
+/* Layout */
+.about-content{
+  max-width:1100px;
+  margin:22px auto;
+  padding: 0 7% 40px;
+  display:grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap:18px;
+  align-items: start;
+}
+
+.stack{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* Cards */
+.about-page .card{
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,.05);
+  padding:18px;
+}
+
+.about-page .card-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.about-page .pill{
+  font-size:12px;
+  font-weight:800;
+  color: var(--pink);
+  border:1px solid rgba(255,95,162,.35);
+  background: rgba(255,95,162,.08);
+  padding:6px 10px;
+  border-radius:999px;
+}
+
+.about-page .muted{
+  color: var(--muted);
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* About blocks */
+.about-split{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:14px;
+}
+
+.about-block h3{
+  margin:0 0 6px;
+  font-size:16px;
+}
+
+.about-block p{
+  margin:0;
+  color:#222;
+  line-height:1.6;
+}
+
+/* Values */
+.about-page .values{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.about-page .value{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+
+.about-page .value-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  margin-top:6px;
+  background: var(--pink);
+  flex: 0 0 10px;
+}
+
+/* Stats */
+.about-page .stats{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:10px;
+  margin-top:16px;
+}
+
+.about-page .stat{
+  border:1px solid var(--border);
+  background:#fafafa;
+  border-radius:12px;
+  padding:12px;
+  text-align:center;
+}
+
+.about-page .stat-num{
+  display:block;
+  font-weight:900;
+  font-size:18px;
+  color:var(--pink);
+}
+
+.about-page .stat-label{
+  display:block;
+  font-size:12px;
+  color:#777;
+  margin-top:4px;
+}
+
+/* Terms */
+.about-page .terms{
+  margin-top:12px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.about-page .term h4{
+  margin:0 0 6px;
+  font-size:15px;
+}
+
+.about-page .term p{
+  margin:0 0 8px;
+  color:#222;
+  line-height:1.6;
+}
+
+.about-page .terms-note{
+  border-top:1px solid var(--border);
+  padding-top:12px;
+  font-weight:800;
+  color:#222;
+}
+
+/* FAQ */
+.about-page .faq-list{
+  margin-top:10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.about-page .faq-item{
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.about-page .faq-q{
+  width:100%;
+  padding:12px 12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#fafafa;
+  border:none;
+  cursor:pointer;
+  font-weight:800;
+  color:#222;
+  text-align:left;
+}
+
+.about-page .faq-q:hover{
+  opacity:.9;
+}
+
+.about-page .faq-icon{
+  font-size:20px;
+  font-weight:900;
+  color:var(--pink);
+  margin-left:12px;
+}
+
+.about-page .faq-a{
+  padding:12px;
+  color:#333;
+  line-height:1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .about-content{
+    grid-template-columns: 1fr;
+  }
+  .about-hero h1{
+    font-size:32px;
+  }
+  .about-page .stats{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px){
+  .about-hero{
+    min-height: 200px;
+    padding: 36px 18px;
+  }
+  .about-hero h1{
+    font-size:26px;
+  }
+  .about-content{
+    padding: 0 18px 32px;
+  }
+  .about-page .card{
+    padding:16px;
+  }
+  .about-page .stats{
+    gap:8px;
+  }
+}
