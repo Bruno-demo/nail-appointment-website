@@ -8,7 +8,7 @@ const authMiddleware = require("./middleware/authMiddleware");
 // 2️⃣ APP INIT
 const app = express();
 
-const corsOrigins = (process.env.CORS_ORIGIN || process.env.FRONTEND_URL || "http://localhost:3000")
+const corsOrigins = (process.env.CORS_ORIGIN || process.env.FRONTEND_URL || "https://nail-appointment-website-frontend.onrender.com")
   .split(",")
   .map((origin) => origin.trim().replace(/\/$/, ""))
   .filter(Boolean);
@@ -16,7 +16,7 @@ const uploadsDir = process.env.UPLOADS_DIR || "uploads";
 
 // 3️⃣ MIDDLEWARE (THIS IS WHERE CORS GOES)
 
-// Allow frontend (React on port 3000) to access backend
+// Allow frontend (React on port) to access backend
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin) {
