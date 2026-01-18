@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const RAW_BASE = (process.env.REACT_APP_API_BASE || "http://localhost:5000").replace(/\/$/, "");
+const RAW_BASE = (process.env.REACT_APP_API_BASE || "https://nail-appointment-website-backend.onrender.com").replace(/\/$/, "");
 const API_BASE = RAW_BASE.endsWith("/api") ? RAW_BASE : `${RAW_BASE}/api`;
 const UPLOADS_BASE = RAW_BASE.endsWith("/api")
   ? RAW_BASE.slice(0, -4)
