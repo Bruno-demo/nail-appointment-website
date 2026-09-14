@@ -9,10 +9,18 @@ const authMiddleware = require("./middleware/authMiddleware");
 // 2️⃣ APP INIT
 const app = express();
 
-const corsOrigins = (process.env.CORS_ORIGIN || process.env.FRONTEND_URL || "http://localhost:3000")
+const configuredOrigins = (process.env.CORS_ORIGIN || process.env.FRONTEND_URL || "http://localhost:3000")
   .split(",")
   .map((origin) => origin.trim().replace(/\/$/, ""))
   .filter(Boolean);
+
+const corsOrigins = [
+  ...configuredOrigins,
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+  "http://localhost:5173",
+  "http://127.0.0.1:5173"
+];
 
 const uploadsDir = process.env.UPLOADS_DIR
   ? path.resolve(process.cwd(), process.env.UPLOADS_DIR)
@@ -32,7 +40,7 @@ app.use(cors({
       return callback(null, true);
     }
 
-    return callback(new Error("Not allowed by CORS"));
+    return callback(null, false);
   },
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "x-requested-with"],

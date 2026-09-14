@@ -272,7 +272,10 @@ exports.login = async (req, res) => {
       { expiresIn: "7d" }
     );
 
-    res.json({ token, user });
+    const safeUser = user.toObject ? user.toObject() : { ...user };
+    delete safeUser.password;
+
+    res.json({ token, user: safeUser });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
