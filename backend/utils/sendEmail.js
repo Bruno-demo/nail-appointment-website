@@ -18,14 +18,14 @@ const buildTextFallback = (subject, html) => {
 };
 
 const sendEmail = async (to, subject, html) => {
-  const smtpHost = process.env.SMTP_HOST;
+  const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
   const smtpPort = Number(process.env.SMTP_PORT || 587);
-  const smtpSecure = String(process.env.SMTP_SECURE || "").toLowerCase() === "true";
+  const smtpSecure = String(process.env.SMTP_SECURE || "false").toLowerCase() === "true";
   const smtpUser = process.env.SMTP_USER || process.env.EMAIL_USER;
   const smtpPass = process.env.SMTP_PASS || process.env.EMAIL_PASS;
 
-  if (!smtpHost || !smtpUser || !smtpPass) {
-    throw new Error("SMTP configuration missing (SMTP_HOST/SMTP_USER/SMTP_PASS)");
+  if (!smtpUser || !smtpPass) {
+    throw new Error("SMTP configuration missing (EMAIL_USER/EMAIL_PASS or SMTP_USER/SMTP_PASS)");
   }
 
   const transporter = nodemailer.createTransport({
@@ -39,7 +39,7 @@ const sendEmail = async (to, subject, html) => {
   });
 
   const fromName = process.env.EMAIL_FROM_NAME || "Yves Nail Salon";
-  const fromEmail = process.env.EMAIL_FROM || process.env.EMAIL_USER;
+  const fromEmail = process.env.EMAIL_FROM || process.env.EMAIL_USER || smtpUser;
   const replyTo = process.env.EMAIL_REPLY_TO || fromEmail;
 
   await transporter.sendMail({
