@@ -8,7 +8,9 @@ const path = require("path");
   ===================================
 */
 
-const uploadsDir = process.env.UPLOADS_DIR || "uploads";
+const uploadsDir = process.env.UPLOADS_DIR
+  ? path.resolve(process.cwd(), process.env.UPLOADS_DIR)
+  : path.resolve(__dirname, "..", "uploads");
 
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });

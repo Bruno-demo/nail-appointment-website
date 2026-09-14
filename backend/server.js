@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require("path");
 require("dotenv").config();
 const authMiddleware = require("./middleware/authMiddleware");
 
@@ -13,7 +14,9 @@ const corsOrigins = (process.env.CORS_ORIGIN || process.env.FRONTEND_URL || "htt
   .map((origin) => origin.trim().replace(/\/$/, ""))
   .filter(Boolean);
 
-const uploadsDir = process.env.UPLOADS_DIR || "uploads";
+const uploadsDir = process.env.UPLOADS_DIR
+  ? path.resolve(process.cwd(), process.env.UPLOADS_DIR)
+  : path.resolve(__dirname, "uploads");
 
 // 3️⃣ MIDDLEWARE (THIS IS WHERE CORS GOES)
 
