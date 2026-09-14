@@ -18,11 +18,23 @@ const buildTextFallback = (subject, html) => {
 };
 
 const sendEmail = async (to, subject, html) => {
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpPort = Number(process.env.SMTP_PORT || 587);
+  const smtpSecure = String(process.env.SMTP_SECURE || "").toLowerCase() === "true";
+  const smtpUser = process.env.SMTP_USER || process.env.EMAIL_USER;
+  const smtpPass = process.env.SMTP_PASS || process.env.EMAIL_PASS;
+
+  if (!smtpHost || !smtpUser || !smtpPass) {
+    throw new Error("SMTP configuration missing (SMTP_HOST/SMTP_USER/SMTP_PASS)");
+  }
+
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: smtpHost,
+    port: smtpPort,
+    secure: smtpSecure,
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS
+      user: smtpUser,
+      pass: smtpPass
     }
   });
 
