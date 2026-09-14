@@ -9,6 +9,8 @@ const sendEmail = require("../utils/sendEmail");
 // REGISTER WITH EMAIL VERIFICATION
 
 exports.register = async (req, res) => {
+  let createdUser = null;
+
   try {
     const { name, email, phone, password } = req.body;
 
@@ -29,7 +31,7 @@ exports.register = async (req, res) => {
     // Token expires in 15 minutes
     const verificationTokenExpires = Date.now() + 15 * 60 * 1000;
 
-    const user = await User.create({
+    createdUser = await User.create({
       name,
       email,
       phone,
@@ -98,7 +100,13 @@ exports.register = async (req, res) => {
       message: "Registration successful. Check your email to verify your account."
     });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error("Registration mail send failed:", error);
+
+    if (createdUser && createdUser._id) {
+      await User.deleteOne({ _id: createdUser._id }).catch(() => null);
+    }
+
+    res.status(500).json({ error: error.message || "Unable to send verification email." });
   }
 };
 
