@@ -1,6 +1,6 @@
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import { UPLOADS_BASE } from "../api";
+import { getServiceImageUrl } from "../api";
 
 const ServiceModal = ({ service, onClose, onAddToCart, cart }) => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const ServiceModal = ({ service, onClose, onAddToCart, cart }) => {
     <div className="modal-overlay">
       <div className="service-modal">
         <img
-          src={service.image ? `${UPLOADS_BASE}/uploads/${service.image}` : "../assets/yves-logo.png"}
+          src={service.image ? getServiceImageUrl(service.image) : "../assets/yves-logo.png"}
           alt={service.name}
           loading="lazy"
           decoding="async"

@@ -1,11 +1,11 @@
-import { UPLOADS_BASE } from "../api";
+import { getServiceImageUrl } from "../api";
 
 const ServiceCard = ({ service, onSelect }) => {
   return (
     
     <div className="service-card">
       <img
-        src={`${UPLOADS_BASE}/uploads/${service.image}`}
+        src={getServiceImageUrl(service.image)}
         alt={service.name}
         loading="lazy"
         decoding="async"

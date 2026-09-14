@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import API, { UPLOADS_BASE } from "../api";
+import API, { getServiceImageUrl } from "../api";
 import "./Booking.css";
 
 /*
@@ -196,7 +196,7 @@ const Booking = () => {
 
               {/* SERVICE IMAGE */}
               <img
-                src={`${UPLOADS_BASE}/uploads/${service.image}`}
+                src={getServiceImageUrl(service.image)}
                 alt={service.name}
                 loading="lazy"
                 decoding="async"

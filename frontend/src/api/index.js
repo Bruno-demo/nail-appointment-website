@@ -7,6 +7,20 @@ const API_ROOT = RAW_BASE.endsWith("/api") ? RAW_BASE.slice(0, -4) : RAW_BASE;
 const API_BASE = `${API_ROOT}/api`;
 const UPLOADS_BASE = API_ROOT;
 
+const isAbsoluteUrl = (value) => /^https?:\/\//i.test(value);
+
+export const getServiceImageUrl = (image) => {
+  if (!image) {
+    return "";
+  }
+
+  if (isAbsoluteUrl(image)) {
+    return image;
+  }
+
+  return `${UPLOADS_BASE}/uploads/${image}`;
+};
+
 const API = axios.create({
   baseURL: API_BASE
 });
