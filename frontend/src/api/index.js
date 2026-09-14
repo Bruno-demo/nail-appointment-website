@@ -2,8 +2,9 @@
 
 import axios from "axios";
 
-const RAW_BASE = (process.env.REACT_APP_API_BASE || "https://nail-appointment-website-backend.onrender.com").replace(/\/$/, "");
-const API_ROOT = RAW_BASE.endsWith("/api") ? RAW_BASE.slice(0, -4) : RAW_BASE;
+const DEFAULT_BACKEND = "https://nail-appointment-website.onrender.com";
+const RAW_BASE = (process.env.REACT_APP_API_BASE || DEFAULT_BACKEND).replace(/\/$/, "");
+const API_ROOT = RAW_BASE.endsWith("/api") ? RAW_BASE.replace(/\/api$/, "") : RAW_BASE;
 const API_BASE = `${API_ROOT}/api`;
 const UPLOADS_BASE = API_ROOT;
 

@@ -16,6 +16,9 @@ const configuredOrigins = (process.env.CORS_ORIGIN || process.env.FRONTEND_URL |
 
 const corsOrigins = [
   ...configuredOrigins,
+  "https://nail-appointment-website.vercel.app",
+  "https://nail-appointment-website.onrender.com",
+  "https://nail-appointment-website-backend.onrender.com",
   "http://localhost:3000",
   "http://127.0.0.1:3000",
   "http://localhost:5173",
