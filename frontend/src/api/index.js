@@ -3,10 +3,9 @@
 import axios from "axios";
 
 const RAW_BASE = (process.env.REACT_APP_API_BASE || "https://nail-appointment-website-backend.onrender.com").replace(/\/$/, "");
-const API_BASE = RAW_BASE.endsWith("/api") ? RAW_BASE : `${RAW_BASE}/api`;
-const UPLOADS_BASE = RAW_BASE.endsWith("/api")
-  ? RAW_BASE.slice(0, -4)
-  : RAW_BASE;
+const API_ROOT = RAW_BASE.endsWith("/api") ? RAW_BASE.slice(0, -4) : RAW_BASE;
+const API_BASE = `${API_ROOT}/api`;
+const UPLOADS_BASE = API_ROOT;
 
 const API = axios.create({
   baseURL: API_BASE

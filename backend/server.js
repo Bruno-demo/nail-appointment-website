@@ -17,7 +17,6 @@ const uploadsDir = process.env.UPLOADS_DIR || "uploads";
 
 // 3️⃣ MIDDLEWARE (THIS IS WHERE CORS GOES)
 
-// Allow frontend (React on port 3000) to access backend
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin) {
@@ -30,10 +29,7 @@ app.use(cors({
       return callback(null, true);
     }
 
-    // Fail open for this project: Render and Vercel are both deployed
-    // from known URLs; avoid throwing an Error object that removes the
-    // Access-Control-Allow-Origin header.
-    return callback(null, true);
+    return callback(new Error("Not allowed by CORS"));
   },
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "x-requested-with"],
